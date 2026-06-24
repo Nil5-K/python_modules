@@ -7,8 +7,8 @@ class Plant:
         self.current_age = current_age
 
     def show(self):
-        return(f"{self.name}: {round(self.height, 1)}cm,"
-              f" {self.current_age} days old")
+        return (f"{self.name}: {round(self.height, 1)}cm,"
+                f" {self.current_age} days old")
 
     def grow(self, n):
         self.height = self.height + n

@@ -38,18 +38,7 @@ class Plant:
         return self._height
 
 
-if __name__ == "__main__":
-    print("=== Garden Security System ===")
-
-    rose = Plant("Rose", 15.0, 10)
-    print(f"Plant created: {rose.show()}\n")
-
-    rose.set_height(25.0)
-    rose.set_age(30)
-    print(f"Height updated: {round(rose.get_height())}cm")
-    print(f"Age updated: {rose.get_age()} days\n")
-
-    rose.set_height(-12.0)
-    rose.set_age(-42)
-
-    print(f"\nCurrent state: {rose.show()}")
+class Flower(Plant):
+	def __init__(self, name, height, age, color):
+		super(name, height, age)
+		self.color = color
