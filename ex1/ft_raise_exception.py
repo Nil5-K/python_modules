@@ -1,6 +1,6 @@
-def input_temperature(temp_str):
+def input_temperature(temp_str: str) -> int:
     temp = int(temp_str)
-    if temp > 0 and temp < 40:
+    if temp >= 0 and temp <= 40:
         return temp
     else:
         if temp < 0:
@@ -9,8 +9,8 @@ def input_temperature(temp_str):
             raise Exception(f"{temp} is too hot for plants (max 40°C)")
 
 
-def test_temperature():
-    print("=== Garden Temperature ===")
+def test_temperature() -> None:
+    print("=== Garden Temperature Checker ===")
 
     print("\nInput data is '25'")
     try:

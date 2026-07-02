@@ -1,29 +1,29 @@
 class GardenError(Exception):
-    def __init__(self, message="Unknown garden error"):
+    def __init__(self, message: str = "Unknown garden error") -> None:
         super().__init__(message)
 
 
 class PlantError(GardenError):
-    def __init__(self, message="Unknown plant error"):
+    def __init__(self, message: str = "Unknown plant error") -> None:
         super().__init__(message)
 
 
 class WaterError(GardenError):
-    def __init__(self, message="Unknown water error"):
+    def __init__(self, message: str = "Unknown water error") -> None:
         super().__init__(message)
 
 
-def check_wilting(is_wilting):
+def check_wilting(is_wilting: bool) -> None:
     if is_wilting:
         raise PlantError("The tomato plant is wilting!")
 
 
-def check_water_level(water_level):
+def check_water_level(water_level: int) -> None:
     if water_level < 10:
         raise WaterError("Not enough water in the tank!")
 
 
-def test_exceptions():
+def test_exceptions() -> None:
     print("=== Custom Garden Errors Demo ===")
 
     print("\nTesting PlantError...")
