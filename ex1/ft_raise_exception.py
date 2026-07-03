@@ -4,9 +4,9 @@ def input_temperature(temp_str: str) -> int:
         return temp
     else:
         if temp < 0:
-            raise Exception(f"{temp} is too cold for plants (min 0°C)")
+            raise Exception(f"{temp}°C is too cold for plants (min 0°C)")
         else:
-            raise Exception(f"{temp} is too hot for plants (max 40°C)")
+            raise Exception(f"{temp}°C is too hot for plants (max 40°C)")
 
 
 def test_temperature() -> None:
