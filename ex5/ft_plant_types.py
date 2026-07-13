@@ -21,7 +21,7 @@ class Plant:
         self._height = self._height + n
         self._growth = self._growth + n
 
-    def age_up(self, n: int) -> None:
+    def age(self, n: int) -> None:
         self._age = self._age + n
 
     def set_height(self, new_height: float) -> None:
@@ -84,8 +84,8 @@ class Vegetable(Plant):
         self.harvest_season = harvest_season
         self.nutritional_value: int = 0
 
-    def age_up(self, n: int) -> None:
-        super().age_up(n)
+    def age(self, n: int) -> None:
+        super().age(n)
         self.nutritional_value += n
 
     def show(self) -> str:
@@ -115,5 +115,5 @@ if __name__ == "__main__":
     print(tomato.show())
     print("[make tomato grow and age for 20 days]")
     tomato.grow(42.0)
-    tomato.age_up(20)
+    tomato.age(20)
     print(tomato.show())

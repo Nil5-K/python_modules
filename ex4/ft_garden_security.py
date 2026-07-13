@@ -21,7 +21,7 @@ class Plant:
         self._height = self._height + n
         self._growth = self._growth + n
 
-    def age_up(self, n: int) -> None:
+    def age(self, n: int) -> None:
         self._age = self._age + n
 
     def set_height(self, new_height: float) -> None:

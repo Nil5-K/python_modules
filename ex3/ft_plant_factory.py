@@ -13,7 +13,7 @@ class Plant:
         self.height = self.height + n
         self.growth = self.growth + n
 
-    def age_up(self, n: int) -> None:
+    def age(self, n: int) -> None:
         self.age = self.age + n
 
 

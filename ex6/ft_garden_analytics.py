@@ -55,7 +55,7 @@ class Plant:
         self._height = self._height + n
         self._growth = self._growth + n
 
-    def age_up(self, n: int) -> None:
+    def age(self, n: int) -> None:
         self._stats.record_age()
         self._age = self._age + n
 
@@ -134,8 +134,8 @@ class Vegetable(Plant):
         self.harvest_season = harvest_season
         self.nutritional_value: int = 0
 
-    def age_up(self, n: int) -> None:
-        super().age_up(n)
+    def age(self, n: int) -> None:
+        super().age(n)
         self.nutritional_value += n
 
     def show(self) -> str:
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     print(sunflower.show())
     print("[make sunflower grow, age and bloom]")
     sunflower.grow(30.0)
-    sunflower.age_up(20)
+    sunflower.age(20)
     sunflower.bloom()
     print(sunflower.show())
     print(f"[statistics for {sunflower.name}]")
