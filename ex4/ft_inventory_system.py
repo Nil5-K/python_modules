@@ -18,7 +18,7 @@ def parse_input() -> dict[str, int]:
     for arg in sys.argv[1:]:
         split_arg = arg.split(":")
         if (len(split_arg) != 2):
-            print(f"Invalid Parameter: '{arg}'")
+            print(f"Error - invalid parameter: '{arg}'")
             continue
         key, value = split_arg
         if key in inventory:

@@ -15,7 +15,7 @@ def main() -> None:
                         in players if player == player.capitalize()]
     print(f"New list of capitalized names only: {players_only_cap}")
 
-    scores = {player: random.randint(100, 1000) for player in players}
+    scores = {player: random.randint(100, 1000) for player in players_cap}
     print(f"Score dict: {scores}")
     score_average = round(sum(scores.values()) / len(scores.values()), 2)
     print(f"Score average is {score_average}")

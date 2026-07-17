@@ -7,7 +7,7 @@ def get_scores() -> list[int]:
 
     for arg in sys.argv[1:]:
         try:
-            scores[i] = int(arg)
+            scores.append(int(arg))
             i += 1
         except ValueError:
             print(f"Invalid parameter: '{arg}'")

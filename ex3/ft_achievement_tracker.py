@@ -13,9 +13,9 @@ def get_all_achievements() -> list[str]:
 
 
 def gen_player_achievements() -> set[str]:
-    MASTER_LIST: list[str] = get_all_achievements()
+    master_list: list[str] = get_all_achievements()
     rand_nb: int = random.randint(4, 9)
-    return set(random.sample(MASTER_LIST, rand_nb))
+    return set(random.sample(master_list, rand_nb))
 
 
 def main() -> None:
@@ -41,10 +41,10 @@ def main() -> None:
     only_charlie = charlie - bob.union(alice, dylan)
     only_dylan = dylan - bob.union(charlie, alice)
 
-    print(f"\nOnly Alice: {only_alice}")
-    print(f"Only Bob: {only_bob}")
-    print(f"Only Charlie: {only_charlie}")
-    print(f"Only Dylan: {only_dylan}")
+    print(f"\nOnly Alice has: {only_alice}")
+    print(f"Only Bob has: {only_bob}")
+    print(f"Only Charlie has: {only_charlie}")
+    print(f"Only Dylan has: {only_dylan}")
 
     missing_alice = all_player_achievements - alice
     missing_bob = all_player_achievements - bob

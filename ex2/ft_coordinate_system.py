@@ -9,7 +9,7 @@ def get_player_pos() -> tuple[float, float, float]:
             )
             x, y, z = raw.split(",")
         except (ValueError, TypeError):
-            print("Invalid Syntax!")
+            print("Invalid syntax")
             continue
 
         try:
