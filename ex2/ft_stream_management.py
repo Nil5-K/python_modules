@@ -18,8 +18,10 @@ def main() -> None:
 
     try:
         file: typing.IO[str] = open(sys.argv[1])
-    except (FileNotFoundError, PermissionError, IsADirectoryError, OSError) as e:
-        print(f"[STDERR] Error opening file '{sys.argv[1]}': {e}", file=sys.stderr)
+    except (FileNotFoundError, PermissionError,
+            IsADirectoryError, OSError) as e:
+        print(f"[STDERR] Error opening file '{sys.argv[1]}': {e}",
+              file=sys.stderr)
         return
 
     print("---")
@@ -51,12 +53,15 @@ def main() -> None:
             out.write(new_content)
             out.close()
             print(f"Data saved in file '{new_filename}'.")
-        except (FileNotFoundError, PermissionError, IsADirectoryError, OSError) as e:
-            print(f"[STDERR] Error opening file '{new_filename}': {e}", file=sys.stderr)
+        except (FileNotFoundError, PermissionError,
+                IsADirectoryError, OSError) as e:
+            print(f"[STDERR] Error opening file '{new_filename}': {e}",
+                  file=sys.stderr)
             print("Data not saved.")
             return
         finally:
             out.close()
+
 
 if __name__ == "__main__":
     main()

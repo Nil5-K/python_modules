@@ -1,4 +1,5 @@
-def secure_archive(filename: str, action: str = "r", content: str = "") -> tuple[bool, str]:
+def secure_archive(filename: str, action: str = "r",
+                   content: str = "") -> tuple[bool, str]:
     if action not in ("r", "w"):
         return (False, f"Wrong action provided: {action}. Select 'r' or 'w'")
 
@@ -11,7 +12,8 @@ def secure_archive(filename: str, action: str = "r", content: str = "") -> tuple
                 f.write(content)
                 return (True, "Content successfully written to file")
 
-    except (FileNotFoundError, PermissionError, IsADirectoryError, OSError) as e:
+    except (FileNotFoundError, PermissionError,
+            IsADirectoryError, OSError) as e:
         return (False, str(e))
 
 
