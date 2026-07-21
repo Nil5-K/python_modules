@@ -44,18 +44,17 @@ def main() -> None:
     if new_filename == "":
         print("Not saving data.")
     else:
-        print(f"Saving data to '{new_filename}'")
         try:
+            print(f"Saving data to '{new_filename}'")
             out = open(new_filename, "w")
-            out.write(new_content)
-            out.close()
+            try:
+                out.write(new_content)
+            finally:
+                out.close()
             print(f"Data saved in file '{new_filename}'.")
         except (FileNotFoundError, PermissionError,
                 IsADirectoryError, OSError) as e:
             print(f"Error opening file '{new_filename}': {e}")
-            return
-        finally:
-            out.close()
 
 
 if __name__ == "__main__":
