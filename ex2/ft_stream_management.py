@@ -59,7 +59,7 @@ def main() -> None:
                 IsADirectoryError, OSError) as e:
             print(f"[STDERR] Error opening file '{new_filename}': {e}",
                   file=sys.stderr)
-
+            print("Data not saved.")
 
 if __name__ == "__main__":
     main()
