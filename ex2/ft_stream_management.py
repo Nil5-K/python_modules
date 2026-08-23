@@ -61,5 +61,6 @@ def main() -> None:
                   file=sys.stderr)
             print("Data not saved.")
 
+
 if __name__ == "__main__":
     main()
