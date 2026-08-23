@@ -57,7 +57,8 @@ def main() -> None:
             print(f"Data saved in file '{new_filename}'.")
         except (FileNotFoundError, PermissionError,
                 IsADirectoryError, OSError) as e:
-            print(f"Error opening file '{new_filename}': {e}")
+            print(f"[STDERR] Error opening file '{new_filename}': {e}",
+                  file=sys.stderr)
 
 
 if __name__ == "__main__":
