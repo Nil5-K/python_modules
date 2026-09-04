@@ -6,7 +6,7 @@ authors = ["nkerstin"]
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 pandas = "^2.1.0"
 numpy = "^1.25.0"
 requests = "^2.31.0"

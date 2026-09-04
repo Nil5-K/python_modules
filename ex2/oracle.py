@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 
+
 def get_requierd_vars() -> dict[str, str | None]:
     matrix_mode = os.getenv("MATRIX_MODE", "development")
     db_url = os.getenv("DATABASE_URL")
@@ -9,11 +10,12 @@ def get_requierd_vars() -> dict[str, str | None]:
     zion_ep = os.getenv("ZION_ENDPOINT")
 
     return {"MATRIX_MODE": matrix_mode, "DATABASE_URL": db_url,
-         "API_KEY": api_key, "LOG_LEVEL": log_lvl, "ZION_ENDPOINT": zion_ep}
+            "API_KEY": api_key, "LOG_LEVEL": log_lvl, "ZION_ENDPOINT": zion_ep}
+
 
 def main() -> None:
     dot_env: bool = load_dotenv()
-    env_vars: dict[str, str] = get_requierd_vars()
+    env_vars: dict[str, str | None] = get_requierd_vars()
     missing_vars: list[str] = []
 
     print("ORACLE STATUS: Reading the Matrix...\n")
@@ -26,9 +28,21 @@ def main() -> None:
             print(f" - {var} is not set")
         print()
 
-    db_status = "Connected to local instance" if env_vars.get("DATABASE_URL") else "Not connected! Set the DATABASE_URL variable!"
-    api_access = "Authenticated" if env_vars.get("API_KEY") else "No Access! Set the API_KEY variable"
-    zion_status = "Online" if env_vars.get("ZION_ENDPOINT") else "Offline! Set the ZION_ENDPOINT variable"
+    db_status = (
+        "Connected to local instance"
+        if env_vars.get("DATABASE_URL")
+        else "Not connected! Set the DATABASE_URL variable!"
+    )
+    api_access = (
+        "Authenticated"
+        if env_vars.get("API_KEY")
+        else "No Access! Set the API_KEY variable"
+    )
+    zion_status = (
+        "Online"
+        if env_vars.get("ZION_ENDPOINT")
+        else "Offline! Set the ZION_ENDPOINT variable"
+    )
 
     print("Configuration loaded:")
     print(f"Mode: {env_vars.get('MATRIX_MODE')}")

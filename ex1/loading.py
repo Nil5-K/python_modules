@@ -34,6 +34,7 @@ def load_packages(_packages: dict[str, str]) -> None:
         print("$> poetry run python loading.py")
         sys.exit(1)
 
+
 def fake_data() -> None:
     import pandas as pd
     import numpy as np
