@@ -19,12 +19,11 @@ def battle(fac_one: CreatureFactory, fac_two: CreatureFactory) -> None:
 
     cre_one = fac_one.create_base()
     print(cre_one.describe())
-    print(cre_one.attack())
-
-    print(" vs. ")
-
+    print(" vs.")
     cre_two = fac_two.create_base()
     print(cre_two.describe())
+    print(" fight!")
+    print(cre_one.attack())
     print(cre_two.attack())
     print()
 
