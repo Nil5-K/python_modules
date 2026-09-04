@@ -55,7 +55,7 @@ class Morphagon(TransformCapability, Creature):
 
     def transform(self) -> str:
         self.state = True
-        return f"{self.name} shifts into a sharper form!"
+        return f"{self.name} morphs into a dragonic battle form!"
 
     def revert(self) -> str:
         self.state = False

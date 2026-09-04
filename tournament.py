@@ -1,5 +1,6 @@
 from ex0 import CreatureFactory, FlameFactory, AquaFactory
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
+from ex2.error import InvalidStrategyError
 from ex2 import (
     BattleStrategy,
     NormalStrategy,
@@ -34,7 +35,7 @@ def battle(opponents: list[Opponent]) -> None:
             try:
                 print(strategy_one.act(creature_one))
                 print(strategy_two.act(creature_two))
-            except ValueError as error:
+            except InvalidStrategyError as error:
                 print(f"Battle error, aborting tournament: {error}")
                 return
 
