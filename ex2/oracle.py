@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 
-def get_requierd_vars() -> dict[str, str | None]:
+def get_required_vars() -> dict[str, str | None]:
     matrix_mode = os.getenv("MATRIX_MODE", "development")
     db_url = os.getenv("DATABASE_URL")
     api_key = os.getenv("API_KEY")
@@ -15,7 +15,7 @@ def get_requierd_vars() -> dict[str, str | None]:
 
 def main() -> None:
     dot_env: bool = load_dotenv()
-    env_vars: dict[str, str | None] = get_requierd_vars()
+    env_vars: dict[str, str | None] = get_required_vars()
     missing_vars: list[str] = []
 
     print("ORACLE STATUS: Reading the Matrix...\n")
