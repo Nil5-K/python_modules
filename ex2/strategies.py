@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from ex0.creatures import Creature
 from ex1.capabilities import TransformCapability, HealCapability
 
+
 class BattleStrategy(ABC):
     @abstractmethod
     def act(self, creature: Creature) -> str:
@@ -27,7 +28,8 @@ class AggressiveStrategy(BattleStrategy):
     def act(self, creature: Creature) -> str:
         if not self.is_valid(creature):
             raise ValueError(
-                f"Invalid Creature '{creature.name}' for this aggressive strategy"
+                f"Invalid Creature '{creature.name}'"
+                f"for this aggressive strategy"
             )
         assert isinstance(creature, TransformCapability)
         result = creature.transform() + "\n"
@@ -43,7 +45,8 @@ class DefensiveStrategy(BattleStrategy):
     def act(self, creature: Creature) -> str:
         if not self.is_valid(creature):
             raise ValueError(
-                f"Invalid Creature '{creature.name}' for this defensive strategy"
+                f"Invalid Creature '{creature.name}'"
+                f"for this defensive strategy"
             )
         assert isinstance(creature, HealCapability)
         result = creature.attack() + "\n"

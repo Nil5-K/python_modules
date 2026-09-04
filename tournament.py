@@ -8,7 +8,6 @@ from ex2 import (
 )
 
 
-
 Opponent = tuple[CreatureFactory, BattleStrategy]
 
 

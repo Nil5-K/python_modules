@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 
 class HealCapability(ABC):
     state: bool
+
     @abstractmethod
     def heal(self) -> str:
         pass

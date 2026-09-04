@@ -14,7 +14,7 @@ class Creature(ABC):
 
 
 class Flameling(Creature):
-    name = "Thalia"
+    name = "Flameling"
     creature_type = "Fire"
 
     def attack(self) -> str:

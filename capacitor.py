@@ -34,5 +34,6 @@ def main() -> None:
     print(evolved_two.attack())
     print(evolved_two.revert())
 
+
 if __name__ == "__main__":
     main()

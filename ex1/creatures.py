@@ -38,7 +38,6 @@ class Shiftling(TransformCapability, Creature):
         self.state = True
         return f"{self.name} shifts into a sharper form!"
 
-
     def revert(self) -> str:
         self.state = False
         return f"{self.name} returns to normal."
@@ -51,7 +50,7 @@ class Morphagon(TransformCapability, Creature):
 
     def attack(self) -> str:
         if self.state:
-            return f"{self.name} unleashes a devastating morph strike!"         
+            return f"{self.name} unleashes a devastating morph strike!"
         return f"{self.name} attacks normally."
 
     def transform(self) -> str:
