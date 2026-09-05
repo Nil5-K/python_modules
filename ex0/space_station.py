@@ -37,7 +37,7 @@ def main() -> None:
         name="International Space Station",
         crew_size=6,
         power_level=85.5,
-        oxygen=92.3
+        oxygen_level=92.3
     )
     print_station(space_station)
 
@@ -48,7 +48,7 @@ def main() -> None:
             name="International Space Station",
             crew_size=23,
             power_level=85.5,
-            oxygen=92.3
+            oxygen_level=92.3
         )
         print_station(invalid_space_station)
     except ValidationError as e:

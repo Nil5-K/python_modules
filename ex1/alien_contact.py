@@ -70,7 +70,7 @@ def main() -> None:
     try:
         invalid_alien_contact = AlienContact(
             contact_id="AC_2024_002",
-            contact_type=ContactType.RADIO,
+            contact_type=ContactType.TELEPATHIC,
             location="Roswell",
             signal_strength=2.0,
             duration_minutes=100,
