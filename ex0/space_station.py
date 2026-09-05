@@ -69,6 +69,6 @@ if __name__ == "__main__":
 # which mypy
 # pip show mypy
 
-#  Clear Shell cache
+#  Clear Shell cache to let mypy point to venv
 # hash -r         (bash)
 # rehash          (zsh)

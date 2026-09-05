@@ -27,7 +27,7 @@ class SpaceMission(BaseModel):
     destination: str = Field(min_length=3, max_length=50)
     launch_date: datetime = Field(default_factory=datetime.now)
     duration_days: int = Field(ge=1, le=3650)
-    crew: list[CrewMember]
+    crew: list[CrewMember] = Field(min_length=1, max_length=12)
     mission_status: str = Field(default="planned")
     budget_millions: float = Field(ge=1.0, le=10000.0)
 
