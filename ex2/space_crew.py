@@ -130,7 +130,7 @@ def main() -> None:
         )
         print_crew(invalid_mission)
     except ValidationError as e:
-        print(f"{e.errors()[0]['msg']}")
+        print(f"{e.errors()[0]['msg'].removeprefix("Value error, ")}")
 
 
 if __name__ == "__main__":

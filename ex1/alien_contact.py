@@ -42,7 +42,7 @@ class AlienContact(BaseModel):
 def print_contact(_alien_contact: AlienContact) -> None:
     print("========================================")
     print(f"ID: {_alien_contact.contact_id}")
-    print(f"Type: {_alien_contact.contact_type}")
+    print(f"Type: {_alien_contact.contact_type.value}")
     print(f"Location: {_alien_contact.location}")
     print(f"Signal: {_alien_contact.signal_strength}/10")
     print(f"Duration: {_alien_contact.duration_minutes} minutes")
@@ -79,7 +79,7 @@ def main() -> None:
         )
         print_contact(invalid_alien_contact)
     except ValidationError as e:
-        print(f"{e.errors()[0]['msg']}")
+        print(f"{e.errors()[0]['msg'].removeprefix("Value error, ")}")
 
 
 if __name__ == "__main__":
