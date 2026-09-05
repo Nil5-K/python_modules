@@ -25,9 +25,10 @@ class AlienContact(BaseModel):
     def validate_alien_contact(self) -> 'AlienContact':
         if not self.contact_id.startswith("AC"):
             raise ValueError("ContactID has to start with 'AC'!")
-        if not self.is_verified and self.contact_type.PHYSICAL:
+        if not self.is_verified and self.contact_type == ContactType.PHYSICAL:
             raise ValueError("Alien Contacts have to be verified!")
-        if self.witness_count < 3 and self.contact_type.TELEPATHIC:
+        if (self.witness_count < 3
+                and self.contact_type == ContactType.TELEPATHIC):
             raise ValueError(
                 "Telepathic contact requires at least 3 witnesses!"
                 )

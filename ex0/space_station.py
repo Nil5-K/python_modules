@@ -7,7 +7,7 @@ class SpaceStation(BaseModel):
     name: str = Field(min_length=1, max_length=50)
     crew_size: int = Field(ge=1, le=20)
     power_level: float = Field(ge=0.0, le=100.0)
-    oxygen: float = Field(ge=0.0, le=100.0)
+    oxygen_level: float = Field(ge=0.0, le=100.0)
     last_maintenance: datetime = Field(default_factory=datetime.now)
     is_operational: bool = Field(default=True)
     notes: str | None = Field(max_length=200, default=None)
@@ -23,7 +23,7 @@ def print_station(_space_station: SpaceStation) -> None:
     print(f"Name: {_space_station.name}")
     print(f"Crew: {_space_station.crew_size} people")
     print(f"Power: {_space_station.power_level}%")
-    print(f"Oxygen: {_space_station.oxygen}%")
+    print(f"Oxygen: {_space_station.oxygen_level}%")
     print(f"Status: {status}")
     if _space_station.notes:
         print(f"Notes: {_space_station.notes}")
