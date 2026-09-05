@@ -57,3 +57,18 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+#  Create a virtual environment and install pydantic
+# python3 -m venv venv
+# source venv/bin/activate
+# pip install pydantic
+
+#  If there is a mypy issue:
+# pip install mypy
+# which mypy
+# pip show mypy
+
+#  Clear Shell cache
+# hash -r         (bash)
+# rehash          (zsh)
