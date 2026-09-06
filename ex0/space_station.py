@@ -19,6 +19,7 @@ def print_station(_space_station: SpaceStation) -> None:
               else "Not Operational"
               )
     print("========================================")
+    print("Valid station created:")
     print(f"ID: {_space_station.station_id}")
     print(f"Name: {_space_station.name}")
     print(f"Crew: {_space_station.crew_size} people")

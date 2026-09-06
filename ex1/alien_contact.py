@@ -41,6 +41,7 @@ class AlienContact(BaseModel):
 
 def print_contact(_alien_contact: AlienContact) -> None:
     print("========================================")
+    print("Valid contact report:")
     print(f"ID: {_alien_contact.contact_id}")
     print(f"Type: {_alien_contact.contact_type.value}")
     print(f"Location: {_alien_contact.location}")

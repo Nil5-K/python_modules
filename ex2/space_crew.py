@@ -59,6 +59,7 @@ class SpaceMission(BaseModel):
 
 def print_crew(_space_mission: SpaceMission) -> None:
     print("========================================")
+    print("Valid mission created:")
     print(f"Mission: {_space_mission.mission_name}")
     print(f"ID: {_space_mission.mission_id}")
     print(f"Destination: {_space_mission.destination}")
